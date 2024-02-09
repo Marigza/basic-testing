@@ -17,13 +17,15 @@ const testCases = [
   { a: 3, b: 3, action: Action.Exponentiate, expected: 27 },
   { a: 2, b: 4, action: Action.Exponentiate, expected: 16 },
   { a: 4, b: 3, action: Action.Exponentiate, expected: 64 },
+  { a: 4, b: 3, action: '**', expected: null },
+  { a: 4, b: 3, action: 'divide', expected: null },
+  { a: 4, b: 3, action: '%', expected: null },
+  { a: 'four', b: 3, action: Action.Add, expected: null },
+  { a: 4, b: 'five', action: Action.Add, expected: null },
+  { a: null, b: 5, action: Action.Add, expected: null },
 ];
 
 describe('simpleCalculator', () => {
-  // This test case is just to run this test suite, remove it when you write your own tests
-  // test('should blah-blah', () => {
-  //   expect(true).toBe(true);
-  // });
   // Consider to use Jest table tests API to test all cases above
   const table = testCases;
   test.each(table)(
